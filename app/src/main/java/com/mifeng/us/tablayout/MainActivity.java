@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_add).setOnClickListener(v->{
             myIndicator.add("tab5", 10);
             myIndicator.setChanger(4);
+
             Toast.makeText(MainActivity.this, "添加tab5", Toast.LENGTH_SHORT).show();
         });
         findViewById(R.id.btn_speed).setOnClickListener(v -> {
