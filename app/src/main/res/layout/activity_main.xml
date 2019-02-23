@@ -65,6 +65,14 @@
                 android:layout_centerInParent="true"
                 android:text="修改为tab颜色" />
 
+            <Button
+                android:id="@+id/btn_click"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btn_jinzhi"
+                android:layout_centerInParent="true"
+                android:text="跳转到下一界面" />
+
 
         </LinearLayout>
 

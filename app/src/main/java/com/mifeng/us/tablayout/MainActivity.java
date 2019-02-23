@@ -47,6 +47,11 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_color).setOnClickListener(v -> {
             myIndicator.resetNomalColor(0xff000000,0xffffffff,0xff000000);
         });
+        findViewById(R.id.btn_click).setOnClickListener(v -> {
+            Intent intent = new Intent(this,SecondActivity.class);
+            startActivity(intent);
+
+        });
 
     }
 
