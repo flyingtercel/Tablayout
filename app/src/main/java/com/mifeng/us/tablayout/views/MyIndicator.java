@@ -124,7 +124,8 @@ public class MyIndicator extends RelativeLayout {
         final Resources.Theme theme = context.getTheme();
         TypedArray array = theme.obtainStyledAttributes(attrs, R.styleable.Indicator,defStyleAttr,0);
         mColor = array.getColor(R.styleable.Indicator_indicatorColor, Color.RED);
-        mList = getContext().getResources().getStringArray(array.getResourceId(R.styleable.Indicator_array, 0));
+        CharSequence[] textArray = array.getTextArray(R.styleable.Indicator_array);
+        //mList = getContext().getResources().getStringArray(array.getResourceId(R.styleable.Indicator_array, 0));
         mTextNomal = array.getInteger(R.styleable.Indicator_text_nomal_size, 12);
         mTextPress = array.getInteger(R.styleable.Indicator_text_press_size, 13);
         mText_Nomal = array.getColor(R.styleable.Indicator_text_nomal_color, Color.GRAY);
@@ -134,8 +135,11 @@ public class MyIndicator extends RelativeLayout {
         mAnimationTime = array.getInteger(R.styleable.Indicator_speed, 300);
         mBai = array.getFloat(R.styleable.Indicator_multiply, (float) 1.2);
         mHeight = array.getInteger(R.styleable.Indicator_line_hegith, 5);
-        for (int i = 0; i < mList.length; i++) {
+       /* for (int i = 0; i < mList.length; i++) {
             mListTitle.add(mList[i]);
+        }*/
+        for (int i = 0;  textArray !=null && i <textArray.length; i++) {
+            mListTitle.add(textArray[i].toString());
         }
         array.recycle();
     }
@@ -386,4 +390,10 @@ public class MyIndicator extends RelativeLayout {
         return mNowPosition;
     }
 
+    public void setHeadTitles(ArrayList<String> mTitles) {
+        removeAllViews();
+        this.mListTitle.clear();
+        this.mListTitle.addAll(mTitles);
+        initView();
+    }
 }
